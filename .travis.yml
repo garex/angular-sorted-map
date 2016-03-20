@@ -1,0 +1,16 @@
+language: node_js
+
+node_js:
+  - stable
+
+env:
+  global:
+    - SAUCE_USERNAME=garex
+    - secure: "XHkdSgy8PpjGLNdf/WTOGIGkF9/9059/Q5VXxyllzQMQHF3AfvYTcbJ9V1SaB9As3Of+5lbPL7j2GLumHy0Sn3jI8uTxHvFCBN+he2bd7CtXqAiY78SMDcCsgdZtbSFd0nMJ/VgSp/F+mgNqxEK+7RdCqSxAPvUgGvDE7Ae4WCw8OQ5Cmrv+QrfaIBML+CKnxUmi2DsezI+bIHK/VsrDIg2oy1EC244/WRoOVUiQbehcvEWXiM/qkzJt8W3jml05HoFrRDxCUxMWmB8JiZI95oz48u+M1XT+EPc0UMIHMXCyHpyXaK1/jigN7vHKkiWKkrSxfTJPPmQtcD7tKXBuzTsqg//btjDWCEMTZ9eFKCfNIRS0doOLa9DhhN9UYcpfU/5QFWkIAWN9/xPT9BTXKPm16FmV53TEv0eB+M1qm2HwGQjHTQ4LRlJNK9hNiwvBhVd73sZVUngrQ6PJmUWQZESQy0RFTR334mHBQqajv4PXr481oMqCfNj6H4jZbE+aTt4beWo6r06UwZl9mvsFGnUv0OqxYuRZZuL1cPUM0SlHbX6U4Jkas5qhKEB+mAmqyM/rzy/eD232wQWEZhHay9si1VFFRoxwMBNaZt7U5mIHt1nLepWDi+gB1+lK34gucFRLUkT7zPo/pvRZz6/iXnc04gy5IVZpqIR/7cISFSc="
+  matrix:
+    - SAUCE_BROWSER="googlechrome, linux"
+    - SAUCE_BROWSER="internet explorer, 6, xp"
+
+cache:
+  directories:
+    - node_modules
