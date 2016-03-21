@@ -2,7 +2,9 @@ module.exports = function (grunt) {
   var browser = (process.env.SAUCE_BROWSER || 'internet explorer, 6, xp').split(/,\s*/),
     browserName = browser[0],
     browserVersion = (browser.length == 3) ? browser[1] : '',
-    browserPlatform = browser[browser.length - 1]
+    browserPlatform = browser[browser.length - 1],
+    jobNumber = process.env.TRAVIS_JOB_NUMBER || (new Date).toISOString(),
+    buildNumber = process.env.TRAVIS_BUILD_NUMBER || jobNumber.split('.')[0]
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -26,14 +28,14 @@ module.exports = function (grunt) {
             version: browserVersion,
             platform: browserPlatform
           }],
-          build: 'Angular SortedMap #' + process.env.TRAVIS_BUILD_NUMBER,
-          testname: 'Angular SortedMap #' + process.env.TRAVIS_JOB_NUMBER,
+          build: 'Angular SortedMap #' + buildNumber,
+          testname: 'Angular SortedMap #' + jobNumber,
           sauceConfig: {
             recordVideo: false,
             recordScreenshots: false
           },
           onTestComplete: function (result, callback) {
-            if (result.passed) {
+            if (result.passed || result.result == null) {
               callback(null, result.passed)
               return
             }

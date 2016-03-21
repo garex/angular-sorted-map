@@ -12,9 +12,11 @@
     test_results.tests = []
 
     for (var i = 0, len = log.length; i < len; i++) {
-      var details = log[i]
+      var details = log[i],
+        name = details.module ? details.module + ': ' + details.name : details.name
+
       test_results.tests.push({
-        name: details.name,
+        name: name,
         message: details.message,
         result: details.result,
         expected: details.expected,
