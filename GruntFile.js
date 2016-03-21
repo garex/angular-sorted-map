@@ -19,7 +19,7 @@ module.exports = function (grunt) {
       all: {
         options: {
           urls: [
-            'http://127.0.0.1:9999/tests/index.html'
+            'http://127.0.0.1:9999/test/index.html'
           ],
           browsers: [{
             browserName: browserName,
