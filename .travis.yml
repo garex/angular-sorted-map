@@ -5,11 +5,24 @@ node_js:
 
 env:
   global:
-    - SAUCE_USERNAME=garex
-    - secure: "XHkdSgy8PpjGLNdf/WTOGIGkF9/9059/Q5VXxyllzQMQHF3AfvYTcbJ9V1SaB9As3Of+5lbPL7j2GLumHy0Sn3jI8uTxHvFCBN+he2bd7CtXqAiY78SMDcCsgdZtbSFd0nMJ/VgSp/F+mgNqxEK+7RdCqSxAPvUgGvDE7Ae4WCw8OQ5Cmrv+QrfaIBML+CKnxUmi2DsezI+bIHK/VsrDIg2oy1EC244/WRoOVUiQbehcvEWXiM/qkzJt8W3jml05HoFrRDxCUxMWmB8JiZI95oz48u+M1XT+EPc0UMIHMXCyHpyXaK1/jigN7vHKkiWKkrSxfTJPPmQtcD7tKXBuzTsqg//btjDWCEMTZ9eFKCfNIRS0doOLa9DhhN9UYcpfU/5QFWkIAWN9/xPT9BTXKPm16FmV53TEv0eB+M1qm2HwGQjHTQ4LRlJNK9hNiwvBhVd73sZVUngrQ6PJmUWQZESQy0RFTR334mHBQqajv4PXr481oMqCfNj6H4jZbE+aTt4beWo6r06UwZl9mvsFGnUv0OqxYuRZZuL1cPUM0SlHbX6U4Jkas5qhKEB+mAmqyM/rzy/eD232wQWEZhHay9si1VFFRoxwMBNaZt7U5mIHt1nLepWDi+gB1+lK34gucFRLUkT7zPo/pvRZz6/iXnc04gy5IVZpqIR/7cISFSc="
+    - SAUCE_USERNAME=angular-sorted-map
+    - secure: "dykEOQVyZuMyAhvgsYsvMexAx5kmlnIKLv1x20G9gLp7/4K3EoOqJFHrcLymIlf4TcVwvH/vHmjux0vPAjlsp0zoTsZGA+6xLu1yNlqKjgWHns5sXZjX86OSbMvvzkAIAVko0y5K8/mPyS1kSUDpteI3JmhHWEwUUai8JZYSmOrspzxxSIPHOjCxR0ejR6A6dZBYKa9SVR2+pr671yRkE9oxdr8RG4kSHN0/16qFXohqV1hFa1BQAYKb9exHy9nGDr43j0yudrSje5KDMTtNGXn22VaGh4/NgWBZ8+BQ0tUsxztM++5NCougrAyV6cYfid/sahpDO5KRaWDeS7D1pwCJMg5TFP/x7kG8GgTpyClaMUU0P+mvr4B41tgydYpqSpwUxIUVrVE0eympDm3UheWvr1P3EYObAm/D6LHyqbu5nrc+JyEVjwRRhT7CvuAO2tmfrqhvvX9tpuVeN/sSAdCdIOIdZzsH3fAuRO3uQZsYXR1XO5vpS6YwI2KGHQKBGHq31kx6o8SVU8icaSgwYd7Ko/vmmnLmHAyqQ/qS3TeOv0LoRT3zvMCNF+10JzeuSJ3DglnfbvpUVWdJbNWDI7h6/UwA0mjJv/Uzybhbc65chy9kwDxdBcRfzke2DGaw1kXzQ+Ze8NzTcs5UZtv24vfpCmeJL/XZD2hpGwZcfWo="
   matrix:
-    - SAUCE_BROWSER="googlechrome, linux"
-    - SAUCE_BROWSER="internet explorer, 6, xp"
+    - SAUCE_BROWSER="Internet Explorer, 6, Windows XP"
+    - SAUCE_BROWSER="Internet Explorer, 8, Windows XP"
+    - SAUCE_BROWSER="Internet Explorer, latest, Windows 10"
+    - SAUCE_BROWSER="MicrosoftEdge, latest, Windows 10"
+    - SAUCE_BROWSER="Firefox, 4, Linux"
+    - SAUCE_BROWSER="Firefox, 31, Linux"
+    - SAUCE_BROWSER="Firefox, latest, Linux"
+    - SAUCE_BROWSER="Chrome, 26, Linux"
+    - SAUCE_BROWSER="Chrome, 31, Linux"
+    - SAUCE_BROWSER="Chrome, latest, Linux"
+    - SAUCE_BROWSER="Safari, 5, Windows 7"
+    - SAUCE_BROWSER="Safari, 7, OS X 10.9"
+    - SAUCE_BROWSER="Safari, 9, OS X 10.11"
+    - SAUCE_BROWSER="Opera, 11, Windows 7"
+    - SAUCE_BROWSER="Opera, 12, Windows 7"
 
 cache:
   directories:
