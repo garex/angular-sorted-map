@@ -27,3 +27,14 @@ env:
 cache:
   directories:
     - node_modules
+
+deploy:
+  provider: releases
+  api_key:
+    secure: joIAOh+WktWlPAkZa8UDgblYnkhwtwUSGdtuf90HfuxN7oyuSnz0qtAxLAs0mjzllUkNZ2xR4Mme62Csqr1Fk43EKdQioypNZmTORzdCpcPNlYkNSGa8KGJ1Haz2cWIjywBlvY5vCoJpL9a6fxt1z9VNlEsjwPdp0Kb4WGOljRuY8TbN0SF2ebAvaf42rPOB/4Odz1gCnu3fBEqx8808Frnn9h8yLDuDlOdk9CgJpri+urDui47+aNAi8qcdcOGvyy9z8w83DbxH8xN0irntWiFfJR9vcEt7gTQ6J3jJwWWmb6vwg2J85GuHAV/vmdODqb5O00jejlNkT8FDFs98KOlDpjhhWq5b6UX9EUOrZUlHF406nUN+wgrrI84z0jS0leUHAvPo3rupU6CnFvI+/DVwjzDVi+XYCF/57U3sZQCNlBqvKpkP7YrgVLWQn3qbMt/BDSMlENlJLstJtelmwckp1K63Lwu7fprwMvqx7bfRoty8tyK3sQwZvF4p18ybz39Q7w9VHYxNzilMK1Ck0mUjq8uV41sJ3UrG6CUX5QGSLQd1licZPVnAhWLfOu41XRo0io8Qeaq2eWuZG3RGT49BhI9x+BYDsfuB3UC4zubYr3rtFrmjah9dXK9Y8ZocB3xrO4JGbgqMrO35N/XdnDErlugHMqoKL4aKlPjv/d0=
+  file:
+    - lib/angular-sorted-map.min.js
+    - lib/angular-sorted-map.min.js.map
+  skip_cleanup: true
+  on:
+    tags: true

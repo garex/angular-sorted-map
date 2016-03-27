@@ -9,15 +9,28 @@
   <script type="text/javascript" src="../node_modules/qunitjs/qunit/qunit.js"></script>
   <script type="text/javascript" src="../test/saucelabs.js"></script>
 
-  <!-- Sources -->
-  <script type="text/javascript" src="../src/map-entry.js"></script>
-  <script type="text/javascript" src="../src/hash-code.js"></script>
-  <script type="text/javascript" src="../src/map.js"></script>
+  <script type="text/javascript">
+  // Sources
+  var scripts = ['../lib/angular-sorted-map.min.js']
+  if ('file:' == document.location.protocol) {
+    scripts = [
+      '../src/extend.js',
+      '../src/map-entry.js',
+      '../src/hash-code.js',
+      '../src/map.js',
+      '../src/sorted-map.js'
+    ]
+  }
 
-  <!-- Tests -->
-  <script type="text/javascript" src="../test/map-entry.js"></script>
-  <script type="text/javascript" src="../test/map.js"></script>
+  // Tests
+  scripts.push('../test/map-entry.js')
+  scripts.push('../test/map.js')
+  scripts.push('../test/sorted-map.js')
 
+  for (var i = 0, iMax = scripts.length; i < iMax; i++) {
+    document.write('<script src="' + scripts[i] + '"><\/script>')
+  }
+  </script>
 </head>
 <body>
   <div id="qunit"></div>
