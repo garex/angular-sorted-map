@@ -57,16 +57,25 @@
       i = indexOfObject(this.hashedKeys, keyString)
 
     if (i == -1) {
-      this.hashedKeys[keyString] = this.keys.length
-      this.keys.push(key)
-      this.values.push(value)
-      this.entries.push(new MapEntry(key, value))
+      this.putNew(keyString, new MapEntry(key, value))
     } else {
       this.values[i] = value
       this.entries[i].setValue(value)
     }
 
     return this
+  }
+
+  /**
+   * @protected
+   * @params {String} keyString
+   * @params {MapEntry} entry
+   */
+  Map.prototype.putNew = function (keyString, entry) {
+    this.hashedKeys[keyString] = this.keys.length
+    this.keys.push(entry.getKey())
+    this.values.push(entry.getValue())
+    this.entries.push(entry)
   }
 
   /**
