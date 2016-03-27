@@ -8,11 +8,31 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    year: (new Date()).getFullYear(),
     connect: {
       server: {
         options: {
           base: '',
           port: 9999
+        }
+      }
+    },
+
+    uglify: {
+      options: {
+        sourceMap: true,
+        preserveComments: false,
+        banner: '/*! <%= pkg.name %> v<%= pkg.version %> | © <%= year %> <%= pkg.author %> | <%= pkg.license %> */'
+      },
+      lib: {
+        files: {
+          'lib/angular-sorted-map.min.js': [
+            'src/extend.js',
+            'src/map-entry.js',
+            'src/hash-code.js',
+            'src/map.js',
+            'src/sorted-map.js',
+          ]
         }
       }
     },
@@ -62,6 +82,7 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-connect')
   grunt.loadNpmTasks('grunt-saucelabs')
+  grunt.loadNpmTasks('grunt-contrib-uglify')
 
   grunt.registerTask('test', ['connect', 'saucelabs-qunit'])
 }
