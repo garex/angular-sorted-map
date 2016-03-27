@@ -1,6 +1,6 @@
 {
   "name": "angular-sorted-map",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Angular ng-repeat ready SortedMap implementation",
   "repository": {
     "type": "git",
