@@ -73,8 +73,8 @@
    */
   Map.prototype.putNew = function (keyString, entry) {
     this.hashedKeys[keyString] = this.keys.length
-    this.keys.push(entry.getKey())
-    this.values.push(entry.getValue())
+    this.keys.push(entry.key)
+    this.values.push(entry.value)
     this.entries.push(entry)
   }
 

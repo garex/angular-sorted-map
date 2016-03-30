@@ -33,9 +33,9 @@ map.values[0] // 'one'
 map.values[1] // 'value'
 map.values[2] // {value: 2}
 
-map.entries[0].getKey()    // 1
-map.entries[1].getValue()  // 'value'
-map.entries[2]             // MapEntry
+map.entries[0].key    // 1
+map.entries[1].value  // 'value'
+map.entries[2]        // MapEntry
 
 map.size()          // 3
 map.isEmpty()       // false

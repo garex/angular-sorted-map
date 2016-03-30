@@ -1,13 +1,9 @@
 ;(function (namespace) {
   function MapEntry (key, value) {
-    this.getKey = function () {
-      return key
-    }
-    this.getValue = function () {
-      return value
-    }
+    this.key = key
+    this.value = value
     this.setValue = function (newValue) {
-      value = newValue
+      this.value = newValue
       return this
     }
   }
