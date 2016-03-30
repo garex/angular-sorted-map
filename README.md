@@ -23,7 +23,7 @@ var map = new garex.SortedMap
 map
   .put('key', 'value')
   .put({key: 'key'}, {value: 2})
-  .put(1, 'one')
+  .put(new garex.MapEntry(1, 'one')) // or any other MapEntry compatible class
 
 map.keys[0]   // 1
 map.keys[1]   // 'key'
@@ -33,9 +33,9 @@ map.values[0] // 'one'
 map.values[1] // 'value'
 map.values[2] // {value: 2}
 
-map.entries[0].getKey()    // 1
-map.entries[1].getValue()  // 'value'
-map.entries[2]             // MapEntry
+map.entries[0].key    // 1
+map.entries[1].value  // 'value'
+map.entries[2]        // MapEntry
 
 map.size()          // 3
 map.isEmpty()       // false

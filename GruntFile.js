@@ -22,6 +22,7 @@ module.exports = function (grunt) {
       options: {
         sourceMap: true,
         preserveComments: false,
+        mangle: false,
         banner: '/*! <%= pkg.name %> v<%= pkg.version %> | © <%= year %> <%= pkg.author %> | <%= pkg.license %> */'
       },
       lib: {
