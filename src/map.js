@@ -53,14 +53,15 @@
    * @returns {Map}
    */
   Map.prototype.put = function (key, value) {
-    var keyString = hashCode(key),
+    var entry = arguments.length == 2 ? new MapEntry(key, value) : key,
+      keyString = hashCode(entry.key),
       i = indexOfObject(this.hashedKeys, keyString)
 
     if (i == -1) {
-      this.putNew(keyString, new MapEntry(key, value))
+      this.putNew(keyString, entry)
     } else {
-      this.values[i] = value
-      this.entries[i].setValue(value)
+      this.values[i] = entry.value
+      this.entries[i].setValue(entry.value)
     }
 
     return this
