@@ -20,8 +20,8 @@ QUnit.module('SortedMap', {
     })
 
     QUnit.test('after adding entries sorted', function (assert) {
-      assert.equal(this.filledMap.entries[0].getKey(), 'a')
-      assert.equal(this.filledMap.entries[2].getKey(), 'z')
+      assert.equal(this.filledMap.entries[0].key, 'a')
+      assert.equal(this.filledMap.entries[2].key, 'z')
     })
   })
 })

@@ -124,6 +124,16 @@ function QUnit_Map (testable) {
         assert.equal(1, this.map.size())
         assert.notOk(this.map.isEmpty())
       })
+
+      QUnit.test('can accept custom entry in single param mode', function (assert) {
+        var entry = new garex.MapEntry('key', 'value')
+        this.map.put(entry)
+        assert.equal(1, this.map.size())
+        assert.equal('value', this.map.get('key'))
+        assert.equal('value', this.map.entries[0].value)
+        entry.setValue('wtf')
+        assert.equal('wtf', this.map.entries[0].value)
+      })
     })
 
     QUnit.module('remove', function () {

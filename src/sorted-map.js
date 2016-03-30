@@ -29,8 +29,8 @@
     }
 
     // inject key/value/entry before startingIndex
-    insert(this.keys, startingIndex, entry.getKey())
-    insert(this.values, startingIndex, entry.getValue())
+    insert(this.keys, startingIndex, entry.key)
+    insert(this.values, startingIndex, entry.value)
     insert(this.entries, startingIndex, entry)
   }
 
